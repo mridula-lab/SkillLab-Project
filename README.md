@@ -14,7 +14,7 @@ Users often struggle to identify phishing, scam, and fake emails. Suspicious lin
 - Allow users to take quick actions on flagged emails.
 - Present the information through a simple, clear, and user-friendly interface.
 
-### Possible Solutions
+### Possible Solutions:
 - Use AI-based email analysis to categorize emails based on their content and characteristics.
 - Display sender and domain information to help users identify unfamiliar or suspicious senders.
 - Analyse links within emails and show a simple safe/risky indicator.
