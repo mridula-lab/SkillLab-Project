@@ -17,3 +17,7 @@ An AI-powered email threat detection platform that analyses emails, highlights p
 
 #### The UI/UX design for the Thandam Labs AI-Powered Email Threat Detection Platform was developed in Figma on 08/09/2026, covering the key screens and user interface layouts.
 <img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/ee47b93b-33f2-4a9c-bbfc-b18bcffad701" />
+
+
+#### The interactive prototype for the Thandam Labs AI-Powered Email Threat Detection Platform was developed in Figma on 08/09/2026, showcasing the platform’s navigation and overall user flow.
+<img width="955" height="503" alt="image" src="https://github.com/user-attachments/assets/7b6cfe38-3d75-446e-97de-7cec29237f07" />
