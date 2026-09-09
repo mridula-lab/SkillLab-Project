@@ -1,0 +1,1343 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f4f4f4;
+    color: white;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.8),
+            transparent 35%
+        ),
+        #f3f3f3;
+}
+
+.login-container {
+
+    width: 350px;
+    min-height: 680px;
+
+    position: relative;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111a38 0%,
+            #162b61 22%,
+            #2166dc 60%,
+            #35bce9 100%
+        );
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.18);
+
+    overflow: hidden;
+}
+
+
+.hamburger {
+    font-size: 18px;
+    color: #d9e1f4;
+}
+
+.top-label {
+    font-size: 11px;
+    color: #aab5cb;
+    margin-left: 15px;
+}
+
+.features {
+    margin-left: 12px;
+}
+
+
+.brand {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.brand h1 {
+    font-family: "Space Mono", monospace;
+    font-size: 24px;
+    color: white;
+}
+
+.brand p {
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #d9e3f8;
+}
+
+
+.login-heading {
+
+    display: block;
+
+    margin: 35px auto 20px;
+
+    border: none;
+
+    width: 155px;
+    height: 40px;
+
+    border-radius: 25px;
+
+    background: #2467e9;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.login-box {
+
+    background: rgba(255,255,255,0.95);
+
+    color: #222;
+
+    border-radius: 9px;
+
+    padding: 14px;
+
+    width: 270px;
+
+    margin: auto;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.12);
+}
+
+
+.login-box label {
+
+    display: block;
+
+    font-size: 9px;
+
+    margin-bottom: 4px;
+
+    margin-top: 4px;
+}
+
+
+.login-box input {
+
+    width: 100%;
+
+    height: 24px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 4px;
+
+    background: #dedede;
+
+    padding: 5px;
+
+    font-size: 9px;
+}
+
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 25px;
+}
+
+.eye {
+
+    position: absolute;
+
+    right: 7px;
+    top: 5px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+.forgot {
+
+    display: block;
+
+    text-align: right;
+
+    margin-top: 4px;
+
+    font-size: 8px;
+
+    color: #333;
+
+    text-decoration: none;
+}
+
+
+.signin-btn {
+
+    width: 100%;
+
+    height: 22px;
+
+    margin-top: 7px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background: #050505;
+
+    color: white;
+
+    font-size: 9px;
+}
+
+
+.create-account {
+
+    text-align: center;
+
+    font-size: 8px;
+
+    margin-top: 7px;
+}
+
+.create-account a {
+    color: #111;
+    font-weight: 600;
+}
+
+
+.login-footer {
+
+    text-align: center;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 9px;
+
+    margin-top: 32px;
+
+    line-height: 1.5;
+}
+
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.app {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f5f5;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    width: 230px;
+
+    min-height: 100vh;
+
+    padding: 14px;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101933,
+            #15316e 35%,
+            #287ce8 70%,
+            #39b9e7
+        );
+
+    border-right: 2px solid rgba(255,255,255,0.15);
+}
+
+
+.sidebar-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.home-icon {
+    margin-left: auto;
+}
+
+
+.sidebar-brand {
+
+    text-align: center;
+
+    padding: 22px 0;
+}
+
+.sidebar-brand h2 {
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 17px;
+}
+
+.sidebar-brand p {
+
+    font-size: 8px;
+
+    margin-top: 5px;
+
+    opacity: .7;
+}
+
+
+.navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.navigation a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    padding: 9px;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    transition: .2s;
+}
+
+
+.navigation a:hover,
+.navigation a.active {
+
+    background: rgba(255,255,255,0.12);
+
+    box-shadow:
+        inset 3px 0 #29b4ff;
+}
+
+
+.navigation a span {
+
+    width: 15px;
+
+    text-align: center;
+}
+
+
+.sidebar-bottom {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 14px;
+
+    right: 14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.sidebar-bottom a {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 10px;
+
+    padding: 7px;
+
+}
+
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    margin-left: 230px;
+
+    width: calc(100% - 230px);
+
+    min-height: 100vh;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111a39,
+            #17346f 25%,
+            #256ce0 60%,
+            #38bce7 100%
+        );
+}
+
+
+.topbar {
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 25px;
+
+    background: rgba(5,13,32,0.25);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.mobile-menu {
+    margin-right: 10px;
+}
+
+.top-icons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 35px 25px 60px;
+}
+
+
+.active-page {
+    display: block;
+}
+
+
+.page-intro {
+    margin-bottom: 20px;
+}
+
+.page-intro h2 {
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.page-intro p {
+
+    font-size: 9px;
+
+    color: #c8d8f6;
+}
+
+
+
+/* =========================================================
+   SCAN CARD
+========================================================= */
+
+.scan-card {
+
+    width: 220px;
+
+    margin: 30px auto 15px;
+
+    padding: 17px;
+
+    text-align: center;
+
+    background: #f5f5f5;
+
+    color: #111;
+
+    border-radius: 12px;
+}
+
+
+.scan-icon {
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.scan-card h3 {
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.scan-card p {
+
+    font-size: 8px;
+
+    color: #8a8a8a;
+
+    line-height: 1.5;
+}
+
+
+.scan-card button {
+
+    border: none;
+
+    background: #286be5;
+
+    color: white;
+
+    border-radius: 15px;
+
+    padding: 8px 25px;
+
+    margin-top: 10px;
+
+    font-size: 9px;
+}
+
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-grid {
+
+    width: 220px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 10px;
+
+    color: #111;
+
+    overflow: hidden;
+}
+
+
+.stat-card {
+
+    padding: 10px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.stat-card span {
+
+    font-size: 8px;
+
+    color: #555;
+}
+
+
+
+/* =========================================================
+   IMPORTANT DASHBOARD
+========================================================= */
+
+.dashboard-important {
+
+    width: 230px;
+
+    margin: 25px auto;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+.dashboard-important h3 {
+
+    font-size: 10px;
+
+    margin-bottom: 8px;
+}
+
+
+.dashboard-important p {
+
+    margin-bottom: 6px;
+}
+
+
+.dashboard-important a {
+
+    color: white;
+
+    display: block;
+
+    text-align: right;
+
+    font-size: 8px;
+}
+
+
+
+/* =========================================================
+   UPLOAD / ANALYSIS
+========================================================= */
+
+.upload-card {
+
+    width: 300px;
+
+    margin: 30px auto;
+
+    padding: 25px 20px;
+
+    background: #f4f4f4;
+
+    border-radius: 11px;
+
+    text-align: center;
+
+    color: #111;
+}
+
+
+.upload-icon {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.upload-card h3 {
+
+    font-size: 13px;
+}
+
+
+.upload-card p {
+
+    font-size: 8px;
+
+    color: #999;
+
+    margin: 5px 0 15px;
+}
+
+
+.upload-btn {
+
+    display: inline-block;
+
+    background: #286be5;
+
+    color: white;
+
+    border-radius: 15px;
+
+    padding: 7px 22px;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+
+.or {
+
+    display: block;
+
+    font-size: 9px;
+
+    margin: 14px;
+}
+
+
+.upload-card textarea {
+
+    width: 100%;
+
+    height: 55px;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 7px;
+
+    padding: 10px;
+
+    font-size: 8px;
+}
+
+
+.analyse-btn {
+
+    width: 130px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 8px;
+
+    background: #286be5;
+
+    color: white;
+
+    font-size: 9px;
+
+    margin-top: 12px;
+}
+
+
+
+/* =========================================================
+   THREAT RESULT
+========================================================= */
+
+.threat-result-card {
+
+    max-width: 400px;
+
+    margin: auto;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #182b61,
+            #286ee4
+        );
+
+    border-radius: 10px;
+}
+
+
+.result-heading {
+
+    color: #fff45b;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+.result-description {
+
+    font-size: 9px;
+
+    margin-bottom: 15px;
+}
+
+
+.risk-box {
+
+    background: #f4f4f4;
+
+    color: #111;
+
+    border-radius: 9px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.risk-box span {
+
+    display: block;
+
+    color: #ff3333;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.risk-box strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+}
+
+
+.risk-box small {
+
+    font-size: 8px;
+}
+
+
+.email-details h3,
+.flag-reasons h3 {
+
+    font-size: 10px;
+
+    margin-bottom: 8px;
+}
+
+
+.email-details p {
+
+    font-size: 9px;
+
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+}
+
+
+.flag-reasons {
+
+    margin-top: 20px;
+}
+
+
+.flag-reasons p {
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+}
+
+
+.threat-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+
+.threat-actions button {
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid white;
+
+    border-radius: 15px;
+
+    padding: 5px 20px;
+
+    min-width: 110px;
+
+    font-size: 8px;
+}
+
+
+.threat-actions button:hover {
+
+    background: white;
+
+    color: #2469df;
+}
+
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    margin: 20px auto;
+
+    border-bottom: 1px solid rgba(255,255,255,.4);
+
+    padding: 8px;
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+
+.search-box input::placeholder {
+
+    color: #c6d2ed;
+}
+
+
+
+/* =========================================================
+   EMAIL LIST
+========================================================= */
+
+.email-list {
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+
+.email-item {
+
+    position: relative;
+
+    padding: 13px 12px;
+
+    border-bottom: 2px solid rgba(255,255,255,.7);
+
+    font-size: 9px;
+}
+
+
+.email-title {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+
+.email-item small {
+
+    font-size: 8px;
+
+    color: #d8e4fb;
+}
+
+
+.email-item p {
+
+    margin-top: 5px;
+
+    color: #dbe5f7;
+
+    line-height: 1.4;
+
+    max-width: 85%;
+}
+
+
+.email-item span {
+
+    display: block;
+
+    text-align: right;
+
+    color: #e0e9fa;
+
+    font-size: 8px;
+
+    margin-top: 3px;
+}
+
+
+.important-email {
+
+    background: rgba(255,255,255,0.04);
+}
+
+
+.important-email strong {
+
+    color: #fff35c;
+
+    font-size: 8px;
+}
+
+
+
+/* =========================================================
+   THREAT SUMMARY
+========================================================= */
+
+.threat-summary {
+
+    width: 250px;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    border-radius: 9px;
+
+    background: #f4f4f4;
+
+    color: #111;
+
+    text-align: center;
+}
+
+
+.threat-summary strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.threat-summary div {
+
+    font-size: 8px;
+}
+
+
+
+/* =========================================================
+   THREAT ITEMS
+========================================================= */
+
+.threat-list {
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+
+.threat-item {
+
+    position: relative;
+
+    padding: 12px;
+
+    border-bottom: 2px solid rgba(255,255,255,.8);
+}
+
+
+.threat-item h3 {
+
+    font-size: 10px;
+
+    margin-bottom: 4px;
+}
+
+
+.threat-item small {
+
+    font-size: 8px;
+}
+
+
+.threat-item p {
+
+    font-size: 8px;
+
+    margin-top: 5px;
+}
+
+
+.threat-item span {
+
+    display: block;
+
+    font-size: 8px;
+
+    margin-top: 5px;
+
+    color: #e4edff;
+}
+
+
+.threat-item button {
+
+    position: absolute;
+
+    right: 5px;
+
+    bottom: 14px;
+
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.high h3 {
+    color: #ff4b4b;
+}
+
+.medium h3 {
+    color: #ffc22e;
+}
+
+.low h3 {
+    color: #62ef73;
+}
+
+
+
+/* =========================================================
+   IMPORTANT COUNT
+========================================================= */
+
+.important-count {
+
+    width: 280px;
+
+    margin: 20px auto;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+
+        width: 190px;
+
+        transform: translateX(-100%);
+
+        transition: .3s;
+
+        z-index: 100;
+    }
+
+
+    .sidebar.open {
+
+        transform: translateX(0);
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+        width: 100%;
+    }
+
+
+    .page {
+
+        padding: 25px 15px 50px;
+    }
+
+
+    .topbar {
+
+        padding: 0 15px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .login-container {
+
+        width: 100%;
+
+        min-height: 100vh;
+    }
+
+
+    .login-box {
+
+        width: 85%;
+    }
+
+
+    .scan-card,
+    .stats-grid,
+    .dashboard-important {
+
+        width: 90%;
+    }
+
+
+    .upload-card {
+
+        width: 95%;
+    }
+
+
+    .threat-result-card {
+
+        width: 95%;
+    }
+
+}

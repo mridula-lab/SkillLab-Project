@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thadam Labs - Email Threat Detection</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-container">
+
+        <div class="hamburger">☰</div>
+        <span class="top-label">About</span>
+        <span class="top-label features">Features</span>
+
+        <div class="brand">
+            <h1>Thadam Labs</h1>
+
+            <p>
+                AI-Powered Email<br>
+                Threat Detection
+            </p>
+        </div>
+
+        <button class="login-heading">
+            Login Page
+        </button>
+
+        <div class="login-box">
+
+            <label>Username:</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your email"
+            >
+
+            <label>Password:</label>
+
+            <div class="password-wrapper">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+
+                <span class="eye" onclick="togglePassword()">◉</span>
+            </div>
+
+            <a href="#" class="forgot">
+                Forgot Password?
+            </a>
+
+            <button class="signin-btn" onclick="loginUser()">
+                Sign in
+            </button>
+
+            <p class="create-account">
+                Don't have an account?
+                <a href="#">Create Account</a>
+            </p>
+
+        </div>
+
+        <div class="login-footer">
+            Stay ahead of threats.<br>
+            Keep your inbox safe.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN APPLICATION
+========================================================= -->
+
+<div id="app" class="app hidden">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <span class="hamburger">☰</span>
+            <span>Thadam Labs</span>
+            <span class="home-icon">⌂</span>
+        </div>
+
+        <div class="sidebar-brand">
+            <h2>Thadam Labs</h2>
+            <p>AI Email Security</p>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="#" onclick="showPage('dashboard')" class="active">
+                <span>⌂</span>
+                Home
+            </a>
+
+            <a href="#" onclick="showPage('inbox')">
+                <span>✉</span>
+                Inbox
+            </a>
+
+            <a href="#" onclick="showPage('threats')">
+                <span>⚠</span>
+                Threats
+            </a>
+
+            <a href="#" onclick="showPage('spam')">
+                <span>▣</span>
+                Spam
+            </a>
+
+            <a href="#" onclick="showPage('important')">
+                <span>☆</span>
+                Important
+            </a>
+
+            <a href="#">
+                <span>ⓘ</span>
+                Reports
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                ⚙ Settings
+            </a>
+
+            <a href="#">
+                ♙ Profile
+            </a>
+
+            <a href="#" onclick="logoutUser()">
+                ↪ Log out
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CONTENT AREA
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP BAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <div>
+                <span class="mobile-menu">☰</span>
+                <span id="pageTitle">Dashboard</span>
+            </div>
+
+            <div class="top-icons">
+                <span>♧</span>
+                <span>♧</span>
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section id="dashboard" class="page active-page">
+
+            <div class="page-intro">
+                <h2>Dashboard</h2>
+                <p>Your email security overview</p>
+            </div>
+
+
+            <div class="scan-card">
+
+                <div class="scan-icon">✉</div>
+
+                <h3>Scan an Email</h3>
+
+                <p>
+                    Analyse an email for
+                    possible threats
+                </p>
+
+                <button onclick="showPage('analysis')">
+                    Scan Email
+                </button>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <strong>128</strong>
+                    <span>Analysed</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>12</strong>
+                    <span>Threats</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>46</strong>
+                    <span>Spam</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>18</strong>
+                    <span>Important</span>
+                </div>
+
+            </div>
+
+
+            <!-- Important emails -->
+
+            <div class="dashboard-important">
+
+                <h3>☆ Important Emails:</h3>
+
+                <p>
+                    College Internship Update
+                    <br>
+                    - Found in spam
+                </p>
+
+                <p>
+                    Project Submission Reminder
+                    <br>
+                    - Found in spam
+                </p>
+
+                <a href="#" onclick="showPage('important')">
+                    View all →
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EMAIL ANALYSIS
+        ================================================== -->
+
+        <section id="analysis" class="page">
+
+            <div class="page-intro">
+                <h2>Email Analysis</h2>
+                <p>Analyse an email for possible threats</p>
+            </div>
+
+
+            <div class="upload-card">
+
+                <div class="upload-icon">
+                    ⇧
+                </div>
+
+                <h3>Upload Email</h3>
+
+                <p>
+                    Upload an email file to analyse
+                </p>
+
+                <label class="upload-btn">
+                    Upload
+                    <input
+                        type="file"
+                        id="emailFile"
+                        onchange="fileUploaded()"
+                        hidden
+                    >
+                </label>
+
+                <span class="or">
+                    OR
+                </span>
+
+                <textarea
+                    id="emailContent"
+                    placeholder="Paste your email content here..."
+                ></textarea>
+
+                <button
+                    class="analyse-btn"
+                    onclick="analyseEmail()"
+                >
+                    Analyse Email
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             THREAT RESULT
+        ================================================== -->
+
+        <section id="threatResult" class="page">
+
+            <div class="page-intro">
+
+                <h2>Threat Result</h2>
+
+            </div>
+
+
+            <div class="threat-result-card">
+
+                <div class="result-heading">
+                    ⚠ Suspicious Email
+                </div>
+
+                <p class="result-description">
+                    This email may be unsafe
+                </p>
+
+
+                <div class="risk-box">
+
+                    <span>HIGH RISK</span>
+
+                    <strong>
+                        78/100
+                    </strong>
+
+                    <small>
+                        Threat Score
+                    </small>
+
+                </div>
+
+
+                <!-- Email details -->
+
+                <div class="email-details">
+
+                    <h3>Email Details</h3>
+
+                    <p>
+                        <b>From:</b><br>
+                        unknown.sender@gmail.com
+                    </p>
+
+                    <p>
+                        <b>Subject:</b><br>
+                        Your account requires verification
+                    </p>
+
+                </div>
+
+
+                <!-- Reasons -->
+
+                <div class="flag-reasons">
+
+                    <h3>
+                        Why was this flagged?
+                    </h3>
+
+                    <p>🔗 One suspicious link detected</p>
+                    <p>👤 Unknown sender</p>
+                    <p>⚠ Phishing-like content</p>
+
+                </div>
+
+
+                <div class="threat-actions">
+
+                    <button onclick="markSpam()">
+                        Report Spam
+                    </button>
+
+                    <button>
+                        Block Sender
+                    </button>
+
+                    <button onclick="deleteEmail()">
+                        Delete Email
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INBOX
+        ================================================== -->
+
+        <section id="inbox" class="page">
+
+            <div class="page-intro">
+
+                <h2>Inbox</h2>
+
+                <p>Your recent emails</p>
+
+            </div>
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    placeholder="Search emails..."
+                    onkeyup="searchEmails(this.value)"
+                >
+            </div>
+
+
+            <div class="email-list">
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ College Internship Update
+                    </div>
+
+                    <small>
+                        placement@college.edu
+                    </small>
+
+                    <p>
+                        Your internship application has been...
+                    </p>
+
+                    <span>
+                        10:32 AM
+                    </span>
+
+                </div>
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Project Submission Reminder
+                    </div>
+
+                    <small>
+                        faculty@college.edu
+                    </small>
+
+                    <p>
+                        Reminder: submit your project...
+                    </p>
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Account Verification
+                    </div>
+
+                    <small>
+                        unknown.sender@gmail.com
+                    </small>
+
+                    <p>
+                        Your account requires verification...
+                    </p>
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Team Meeting
+                    </div>
+
+                    <small>
+                        team@projectmail.com
+                    </small>
+
+                    <p>
+                        Meeting scheduled for tomorrow...
+                    </p>
+
+                    <span>
+                        Sep 7
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SPAM
+        ================================================== -->
+
+        <section id="spam" class="page">
+
+            <div class="page-intro">
+
+                <h2>Spam</h2>
+
+                <p>
+                    Emails identified as unwanted
+                </p>
+
+            </div>
+
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    placeholder="Search emails..."
+                >
+            </div>
+
+
+            <div class="email-list">
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Special Offer Just For You
+                    </div>
+
+                    <small>
+                        offers@randommail.com
+                    </small>
+
+                    <p>
+                        Claim your exclusive reward today...
+                    </p>
+
+                    <span>
+                        10:45 AM
+                    </span>
+
+                </div>
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Your Account Needs Verification
+                    </div>
+
+                    <small>
+                        unknown.sender@gmail.com
+                    </small>
+
+                    <p>
+                        Verify your account immediately...
+                    </p>
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+
+                <div class="email-item">
+
+                    <div class="email-title">
+                        ✉ Congratulations! You Won a Prize
+                    </div>
+
+                    <small>
+                        promo@unknown.com
+                    </small>
+
+                    <p>
+                        Click here to claim your prize...
+                    </p>
+
+                    <span>
+                        Sep 7
+                    </span>
+
+                </div>
+
+
+                <div class="email-item important-email">
+
+                    <div class="email-title">
+                        ✉ College Internship Update
+                    </div>
+
+                    <small>
+                        placement@college.edu
+                    </small>
+
+                    <p>
+                        Your internship application has been updated...
+                    </p>
+
+                    <strong>
+                        ☆ Important
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             THREATS
+        ================================================== -->
+
+        <section id="threats" class="page">
+
+            <div class="page-intro">
+
+                <h2>Threats</h2>
+
+                <p>
+                    Potentially harmful emails detected
+                </p>
+
+            </div>
+
+
+            <div class="threat-summary">
+
+                <strong>
+                    12 Threats Detected
+                </strong>
+
+                <div>
+                    4 High &nbsp;
+                    5 Medium &nbsp;
+                    3 Low
+                </div>
+
+            </div>
+
+
+            <div class="threat-list">
+
+
+                <div class="threat-item high">
+
+                    <h3>
+                        🔴 Account Verification Required
+                    </h3>
+
+                    <small>
+                        unknown.sender@gmail.com
+                    </small>
+
+                    <p>
+                        High Risk · 78/100
+                    </p>
+
+                    <span>
+                        Suspicious link detected
+                    </span>
+
+                    <button onclick="showPage('threatResult')">
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="threat-item medium">
+
+                    <h3>
+                        🟠 Payment Confirmation
+                    </h3>
+
+                    <small>
+                        billing@unknownmail.com
+                    </small>
+
+                    <p>
+                        Medium Risk · 54/100
+                    </p>
+
+                    <span>
+                        Unusual sender detected
+                    </span>
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="threat-item high">
+
+                    <h3>
+                        🔴 Urgent Account Alert
+                    </h3>
+
+                    <small>
+                        security-alert@random.com
+                    </small>
+
+                    <p>
+                        High Risk · 91/100
+                    </p>
+
+                    <span>
+                        Phishing-like content
+                    </span>
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="threat-item low">
+
+                    <h3>
+                        🟢 Suspicious Newsletter
+                    </h3>
+
+                    <small>
+                        offers@mail.com
+                    </small>
+
+                    <p>
+                        Low Risk · 28/100
+                    </p>
+
+                    <span>
+                        Repeated unwanted email
+                    </span>
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             IMPORTANT EMAILS
+        ================================================== -->
+
+        <section id="important" class="page">
+
+            <div class="page-intro">
+
+                <h2>Important Emails</h2>
+
+                <p>
+                    Emails that may need your attention
+                </p>
+
+            </div>
+
+
+            <div class="important-count">
+
+                3 important emails found in Spam
+
+            </div>
+
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    placeholder="Search emails..."
+                >
+            </div>
+
+
+            <div class="email-list">
+
+
+                <div class="email-item important-email">
+
+                    <div class="email-title">
+                        ☆ College Internship Update
+                    </div>
+
+                    <small>
+                        placement@college.edu
+                    </small>
+
+                    <p>
+                        Your internship application has been...
+                    </p>
+
+                    <span>
+                        Found in Spam · Yesterday
+                    </span>
+
+                </div>
+
+
+                <div class="email-item important-email">
+
+                    <div class="email-title">
+                        ☆ Project Submission Reminder
+                    </div>
+
+                    <small>
+                        faculty@college.edu
+                    </small>
+
+                    <p>
+                        Reminder: submit your project...
+                    </p>
+
+                    <span>
+                        Found in Spam · Sep 7
+                    </span>
+
+                </div>
+
+
+                <div class="email-item important-email">
+
+                    <div class="email-title">
+                        ☆ Team Meeting
+                    </div>
+
+                    <small>
+                        team@projectmail.com
+                    </small>
+
+                    <p>
+                        Meeting scheduled for tomorrow...
+                    </p>
+
+                    <span>
+                        Found in Spam · Sep 6
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
