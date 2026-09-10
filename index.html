@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thadam Labs - Email Threat Detection</title>
+    <title>Thadam Labs - Email Security</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =========================================================
+<!-- =====================================================
      LOGIN PAGE
-========================================================= -->
+===================================================== -->
 
 <div id="loginPage" class="login-page">
 
     <div class="login-container">
 
-        <div class="hamburger">☰</div>
-        <span class="top-label">About</span>
-        <span class="top-label features">Features</span>
+        <div class="login-top">
+            <span class="hamburger">☰</span>
+            <span>About</span>
+            <span>Features</span>
+        </div>
 
         <div class="brand">
             <h1>Thadam Labs</h1>
@@ -44,36 +48,50 @@
 
         <div class="login-box">
 
-            <label>Username:</label>
+            <label for="username">UserName:</label>
+
             <input
-                type="text"
+                type="email"
                 id="username"
                 placeholder="Enter your email"
             >
 
-            <label>Password:</label>
+            <label for="password">Password:</label>
 
             <div class="password-wrapper">
+
                 <input
                     type="password"
                     id="password"
                     placeholder="Enter your password"
                 >
 
-                <span class="eye" onclick="togglePassword()">◉</span>
+                <span
+                    class="eye"
+                    onclick="togglePassword()"
+                >
+                    ◌
+                </span>
+
             </div>
 
-            <a href="#" class="forgot">
+            <a href="#" class="forgot"
+               onclick="forgotPassword(event)">
                 Forgot Password?
             </a>
 
-            <button class="signin-btn" onclick="loginUser()">
+            <button
+                class="signin-btn"
+                onclick="loginUser()"
+            >
                 Sign in
             </button>
 
             <p class="create-account">
                 Don't have an account?
-                <a href="#">Create Account</a>
+                <a href="#" onclick="createAccount(event)">
+                    Create Account
+                </a>
             </p>
 
         </div>
@@ -88,58 +106,86 @@
 </div>
 
 
-<!-- =========================================================
-     MAIN APPLICATION
-========================================================= -->
+<!-- =====================================================
+     APPLICATION
+===================================================== -->
 
 <div id="app" class="app hidden">
 
 
-    <!-- =====================================================
+    <!-- =================================================
          SIDEBAR
-    ====================================================== -->
+    ================================================== -->
 
     <aside class="sidebar">
 
         <div class="sidebar-header">
+
             <span class="hamburger">☰</span>
+
             <span>Thadam Labs</span>
+
             <span class="home-icon">⌂</span>
+
         </div>
 
+
         <div class="sidebar-brand">
+
             <h2>Thadam Labs</h2>
-            <p>AI Email Security</p>
+
+            <p>AI-Powered Email Security</p>
+
         </div>
+
 
         <nav class="navigation">
 
-            <a href="#" onclick="showPage('dashboard')" class="active">
+            <a
+                href="#"
+                class="active"
+                onclick="showPage('dashboard'); return false;"
+            >
                 <span>⌂</span>
                 Home
             </a>
 
-            <a href="#" onclick="showPage('inbox')">
+            <a
+                href="#"
+                onclick="showPage('inbox'); return false;"
+            >
                 <span>✉</span>
                 Inbox
             </a>
 
-            <a href="#" onclick="showPage('threats')">
+            <a
+                href="#"
+                onclick="showPage('threats'); return false;"
+            >
                 <span>⚠</span>
                 Threats
             </a>
 
-            <a href="#" onclick="showPage('spam')">
+            <a
+                href="#"
+                onclick="showPage('spam'); return false;"
+            >
                 <span>▣</span>
                 Spam
             </a>
 
-            <a href="#" onclick="showPage('important')">
+            <a
+                href="#"
+                onclick="showPage('important'); return false;"
+            >
                 <span>☆</span>
                 Important
             </a>
 
-            <a href="#">
+            <a
+                href="#"
+                onclick="showPage('reports'); return false;"
+            >
                 <span>ⓘ</span>
                 Reports
             </a>
@@ -149,15 +195,24 @@
 
         <div class="sidebar-bottom">
 
-            <a href="#">
+            <a
+                href="#"
+                onclick="showToast('Settings are coming soon.'); return false;"
+            >
                 ⚙ Settings
             </a>
 
-            <a href="#">
+            <a
+                href="#"
+                onclick="showToast('Profile section is coming soon.'); return false;"
+            >
                 ♙ Profile
             </a>
 
-            <a href="#" onclick="logoutUser()">
+            <a
+                href="#"
+                onclick="logoutUser(); return false;"
+            >
                 ↪ Log out
             </a>
 
@@ -166,27 +221,48 @@
     </aside>
 
 
-    <!-- =====================================================
-         CONTENT AREA
-    ====================================================== -->
+    <!-- =================================================
+         MAIN
+    ================================================== -->
 
     <main class="main-content">
 
 
-        <!-- =================================================
-             TOP BAR
-        ================================================== -->
+        <!-- TOP BAR -->
 
         <header class="topbar">
 
-            <div>
-                <span class="mobile-menu">☰</span>
-                <span id="pageTitle">Dashboard</span>
+            <div class="topbar-left">
+
+                <span
+                    class="mobile-menu"
+                    onclick="toggleSidebar()"
+                >
+                    ☰
+                </span>
+
+                <span id="pageTitle">
+                    Dashboard
+                </span>
+
             </div>
 
             <div class="top-icons">
-                <span>♧</span>
-                <span>♧</span>
+
+                <span
+                    title="Notifications"
+                    onclick="showToast('No new notifications.')"
+                >
+                    ♧
+                </span>
+
+                <span
+                    title="Home"
+                    onclick="showPage('dashboard')"
+                >
+                    ⌂
+                </span>
+
             </div>
 
         </header>
@@ -196,64 +272,92 @@
              DASHBOARD
         ================================================== -->
 
-        <section id="dashboard" class="page active-page">
+        <section
+            id="dashboard"
+            class="page active-page"
+        >
 
             <div class="page-intro">
+
                 <h2>Dashboard</h2>
-                <p>Your email security overview</p>
+
+                <p>
+                    Your email security overview
+                </p>
+
             </div>
 
 
             <div class="scan-card">
 
-                <div class="scan-icon">✉</div>
+                <div class="scan-icon">
+                    ✉
+                </div>
 
-                <h3>Scan an Email</h3>
+                <h3>
+                    Scan an Email
+                </h3>
 
                 <p>
-                    Analyse an email for
+                    Analyse an email for<br>
                     possible threats
                 </p>
 
-                <button onclick="showPage('analysis')">
+                <button
+                    onclick="showPage('analysis')"
+                >
                     Scan Email
                 </button>
 
             </div>
 
 
-            <!-- Statistics -->
-
             <div class="stats-grid">
 
                 <div class="stat-card">
-                    <strong>128</strong>
-                    <span>Analysed</span>
+                    <strong id="analysedCount">
+                        128
+                    </strong>
+                    <span>
+                        Analysed
+                    </span>
                 </div>
 
                 <div class="stat-card">
-                    <strong>12</strong>
-                    <span>Threats</span>
+                    <strong id="threatCount">
+                        12
+                    </strong>
+                    <span>
+                        Threats
+                    </span>
                 </div>
 
                 <div class="stat-card">
-                    <strong>46</strong>
-                    <span>Spam</span>
+                    <strong id="spamCount">
+                        46
+                    </strong>
+                    <span>
+                        Spam
+                    </span>
                 </div>
 
                 <div class="stat-card">
-                    <strong>18</strong>
-                    <span>Important</span>
+                    <strong id="importantCount">
+                        18
+                    </strong>
+                    <span>
+                        Important
+                    </span>
                 </div>
 
             </div>
 
 
-            <!-- Important emails -->
-
             <div class="dashboard-important">
 
-                <h3>☆ Important Emails:</h3>
+                <h3>
+                    ☆ Important Emails:
+                </h3>
 
                 <p>
                     College Internship Update
@@ -267,7 +371,10 @@
                     - Found in spam
                 </p>
 
-                <a href="#" onclick="showPage('important')">
+                <a
+                    href="#"
+                    onclick="showPage('important'); return false;"
+                >
                     View all →
                 </a>
 
@@ -276,16 +383,25 @@
         </section>
 
 
-
         <!-- =================================================
              EMAIL ANALYSIS
         ================================================== -->
 
-        <section id="analysis" class="page">
+        <section
+            id="analysis"
+            class="page"
+        >
 
             <div class="page-intro">
-                <h2>Email Analysis</h2>
-                <p>Analyse an email for possible threats</p>
+
+                <h2>
+                    Email Analysis
+                </h2>
+
+                <p>
+                    Analyse an email for possible threats
+                </p>
+
             </div>
 
 
@@ -295,30 +411,40 @@
                     ⇧
                 </div>
 
-                <h3>Upload Email</h3>
+                <h3>
+                    Upload Email
+                </h3>
 
                 <p>
                     Upload an email file to analyse
                 </p>
 
+
                 <label class="upload-btn">
+
                     Upload
+
                     <input
                         type="file"
                         id="emailFile"
+                        accept=".eml,.txt,.msg"
                         onchange="fileUploaded()"
                         hidden
                     >
+
                 </label>
+
 
                 <span class="or">
                     OR
                 </span>
 
+
                 <textarea
                     id="emailContent"
                     placeholder="Paste your email content here..."
                 ></textarea>
+
 
                 <button
                     class="analyse-btn"
@@ -332,16 +458,20 @@
         </section>
 
 
-
         <!-- =================================================
              THREAT RESULT
         ================================================== -->
 
-        <section id="threatResult" class="page">
+        <section
+            id="threatResult"
+            class="page"
+        >
 
             <div class="page-intro">
 
-                <h2>Threat Result</h2>
+                <h2>
+                    Threat Result
+                </h2>
 
             </div>
 
@@ -359,7 +489,9 @@
 
                 <div class="risk-box">
 
-                    <span>HIGH RISK</span>
+                    <span>
+                        HIGH RISK
+                    </span>
 
                     <strong>
                         78/100
@@ -372,11 +504,11 @@
                 </div>
 
 
-                <!-- Email details -->
-
                 <div class="email-details">
 
-                    <h3>Email Details</h3>
+                    <h3>
+                        Email Details
+                    </h3>
 
                     <p>
                         <b>From:</b><br>
@@ -391,17 +523,23 @@
                 </div>
 
 
-                <!-- Reasons -->
-
                 <div class="flag-reasons">
 
                     <h3>
                         Why was this flagged?
                     </h3>
 
-                    <p>🔗 One suspicious link detected</p>
-                    <p>👤 Unknown sender</p>
-                    <p>⚠ Phishing-like content</p>
+                    <p>
+                        🔗 One suspicious link detected
+                    </p>
+
+                    <p>
+                        👤 Unknown sender
+                    </p>
+
+                    <p>
+                        ⚠ Phishing-like content
+                    </p>
 
                 </div>
 
@@ -412,7 +550,7 @@
                         Report Spam
                     </button>
 
-                    <button>
+                    <button onclick="blockSender()">
                         Block Sender
                     </button>
 
@@ -427,33 +565,45 @@
         </section>
 
 
-
         <!-- =================================================
              INBOX
         ================================================== -->
 
-        <section id="inbox" class="page">
+        <section
+            id="inbox"
+            class="page"
+        >
 
             <div class="page-intro">
 
-                <h2>Inbox</h2>
+                <h2>
+                    Inbox
+                </h2>
 
-                <p>Your recent emails</p>
+                <p>
+                    Your recent emails
+                </p>
 
             </div>
 
+
             <div class="search-box">
+
                 🔍
+
                 <input
                     type="text"
                     placeholder="Search emails..."
-                    onkeyup="searchEmails(this.value)"
+                    oninput="searchInbox(this.value)"
                 >
+
             </div>
 
 
-            <div class="email-list">
-
+            <div
+                class="email-list"
+                id="inboxList"
+            >
 
                 <div class="email-item">
 
@@ -543,16 +693,20 @@
         </section>
 
 
-
         <!-- =================================================
              SPAM
         ================================================== -->
 
-        <section id="spam" class="page">
+        <section
+            id="spam"
+            class="page"
+        >
 
             <div class="page-intro">
 
-                <h2>Spam</h2>
+                <h2>
+                    Spam
+                </h2>
 
                 <p>
                     Emails identified as unwanted
@@ -562,16 +716,22 @@
 
 
             <div class="search-box">
+
                 🔍
+
                 <input
                     type="text"
                     placeholder="Search emails..."
+                    oninput="searchSpam(this.value)"
                 >
+
             </div>
 
 
-            <div class="email-list">
-
+            <div
+                class="email-list"
+                id="spamList"
+            >
 
                 <div class="email-item">
 
@@ -661,16 +821,20 @@
         </section>
 
 
-
         <!-- =================================================
              THREATS
         ================================================== -->
 
-        <section id="threats" class="page">
+        <section
+            id="threats"
+            class="page"
+        >
 
             <div class="page-intro">
 
-                <h2>Threats</h2>
+                <h2>
+                    Threats
+                </h2>
 
                 <p>
                     Potentially harmful emails detected
@@ -694,8 +858,10 @@
             </div>
 
 
-            <div class="threat-list">
-
+            <div
+                class="threat-list"
+                id="threatList"
+            >
 
                 <div class="threat-item high">
 
@@ -715,7 +881,14 @@
                         Suspicious link detected
                     </span>
 
-                    <button onclick="showPage('threatResult')">
+                    <button
+                        onclick="openThreat(
+                            'Account Verification Required',
+                            'unknown.sender@gmail.com',
+                            78,
+                            'Suspicious link detected'
+                        )"
+                    >
                         →
                     </button>
 
@@ -740,7 +913,14 @@
                         Unusual sender detected
                     </span>
 
-                    <button>
+                    <button
+                        onclick="openThreat(
+                            'Payment Confirmation',
+                            'billing@unknownmail.com',
+                            54,
+                            'Unusual sender detected'
+                        )"
+                    >
                         →
                     </button>
 
@@ -765,7 +945,14 @@
                         Phishing-like content
                     </span>
 
-                    <button>
+                    <button
+                        onclick="openThreat(
+                            'Urgent Account Alert',
+                            'security-alert@random.com',
+                            91,
+                            'Phishing-like content'
+                        )"
+                    >
                         →
                     </button>
 
@@ -790,7 +977,14 @@
                         Repeated unwanted email
                     </span>
 
-                    <button>
+                    <button
+                        onclick="openThreat(
+                            'Suspicious Newsletter',
+                            'offers@mail.com',
+                            28,
+                            'Repeated unwanted email'
+                        )"
+                    >
                         →
                     </button>
 
@@ -801,16 +995,20 @@
         </section>
 
 
-
         <!-- =================================================
              IMPORTANT EMAILS
         ================================================== -->
 
-        <section id="important" class="page">
+        <section
+            id="important"
+            class="page"
+        >
 
             <div class="page-intro">
 
-                <h2>Important Emails</h2>
+                <h2>
+                    Important Emails
+                </h2>
 
                 <p>
                     Emails that may need your attention
@@ -827,16 +1025,22 @@
 
 
             <div class="search-box">
+
                 🔍
+
                 <input
                     type="text"
                     placeholder="Search emails..."
+                    oninput="searchImportant(this.value)"
                 >
+
             </div>
 
 
-            <div class="email-list">
-
+            <div
+                class="email-list"
+                id="importantList"
+            >
 
                 <div class="email-item important-email">
 
@@ -900,18 +1104,79 @@
 
                 </div>
 
-
             </div>
 
         </section>
 
+
+        <!-- =================================================
+             REPORTS
+        ================================================== -->
+
+        <section
+            id="reports"
+            class="page"
+        >
+
+            <div class="page-intro">
+
+                <h2>
+                    Reports
+                </h2>
+
+                <p>
+                    Email security analysis overview
+                </p>
+
+            </div>
+
+
+            <div class="report-card">
+
+                <h3>
+                    Security Report
+                </h3>
+
+                <div class="report-row">
+                    <span>Total Emails Analysed</span>
+                    <strong id="reportAnalysed">128</strong>
+                </div>
+
+                <div class="report-row">
+                    <span>Threats Detected</span>
+                    <strong id="reportThreats">12</strong>
+                </div>
+
+                <div class="report-row">
+                    <span>Spam Emails</span>
+                    <strong id="reportSpam">46</strong>
+                </div>
+
+                <div class="report-row">
+                    <span>Important Emails</span>
+                    <strong id="reportImportant">18</strong>
+                </div>
+
+                <button
+                    class="analyse-btn"
+                    onclick="generateReport()"
+                >
+                    Generate Report
+                </button>
+
+            </div>
+
+        </section>
 
     </main>
 
 </div>
 
 
-<!-- JavaScript -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
 
 </body>
