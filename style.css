@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", sans-serif;
     background: #f4f4f4;
@@ -35,14 +39,15 @@ button {
 
 .login-page {
     min-height: 100vh;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     background:
         radial-gradient(
             circle at top left,
-            rgba(255,255,255,0.8),
+            rgba(255,255,255,0.9),
             transparent 35%
         ),
         #f3f3f3;
@@ -60,10 +65,10 @@ button {
     background:
         linear-gradient(
             180deg,
-            #111a38 0%,
-            #162b61 22%,
-            #2166dc 60%,
-            #35bce9 100%
+            #101a38 0%,
+            #172d67 25%,
+            #2468df 60%,
+            #37bce7 100%
         );
 
     box-shadow:
@@ -73,38 +78,55 @@ button {
 }
 
 
-.hamburger {
-    font-size: 18px;
-    color: #d9e1f4;
-}
+.login-top {
 
-.top-label {
-    font-size: 11px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 10px;
+
     color: #aab5cb;
-    margin-left: 15px;
 }
 
-.features {
-    margin-left: 12px;
+
+.login-top .hamburger {
+
+    font-size: 17px;
+
+    color: #dce5f7;
 }
 
 
 .brand {
+
     text-align: center;
+
     margin-top: 35px;
 }
 
+
 .brand h1 {
+
     font-family: "Space Mono", monospace;
+
     font-size: 24px;
+
     color: white;
 }
 
+
 .brand p {
+
     margin-top: 12px;
-    font-size: 11px;
+
+    font-size: 10px;
+
     line-height: 1.6;
-    color: #d9e3f8;
+
+    color: #dce6f8;
 }
 
 
@@ -112,37 +134,42 @@ button {
 
     display: block;
 
+    width: 155px;
+
+    height: 40px;
+
     margin: 35px auto 20px;
 
     border: none;
 
-    width: 155px;
-    height: 40px;
-
     border-radius: 25px;
 
-    background: #2467e9;
+    background: #286be9;
 
     color: white;
 
     font-size: 14px;
+
     font-weight: 600;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
 }
 
 
 .login-box {
 
-    background: rgba(255,255,255,0.95);
-
-    color: #222;
-
-    border-radius: 9px;
-
-    padding: 14px;
-
     width: 270px;
 
     margin: auto;
+
+    padding: 14px;
+
+    border-radius: 9px;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #222;
 
     box-shadow:
         0 5px 20px rgba(0,0,0,0.12);
@@ -153,11 +180,9 @@ button {
 
     display: block;
 
+    margin: 4px 0;
+
     font-size: 9px;
-
-    margin-bottom: 4px;
-
-    margin-top: 4px;
 }
 
 
@@ -173,34 +198,39 @@ button {
 
     border-radius: 4px;
 
-    background: #dedede;
-
     padding: 5px;
+
+    background: #dedede;
 
     font-size: 9px;
 }
 
 
 .password-wrapper {
+
     position: relative;
 }
 
+
 .password-wrapper input {
+
     padding-right: 25px;
 }
+
 
 .eye {
 
     position: absolute;
 
     right: 7px;
+
     top: 5px;
 
     font-size: 10px;
 
-    cursor: pointer;
-
     color: #555;
+
+    cursor: pointer;
 }
 
 
@@ -208,13 +238,13 @@ button {
 
     display: block;
 
-    text-align: right;
-
     margin-top: 4px;
 
-    font-size: 8px;
+    text-align: right;
 
     color: #333;
+
+    font-size: 8px;
 
     text-decoration: none;
 }
@@ -224,7 +254,7 @@ button {
 
     width: 100%;
 
-    height: 22px;
+    height: 23px;
 
     margin-top: 7px;
 
@@ -242,20 +272,25 @@ button {
 
 .create-account {
 
+    margin-top: 7px;
+
     text-align: center;
 
     font-size: 8px;
-
-    margin-top: 7px;
 }
 
+
 .create-account a {
+
     color: #111;
+
     font-weight: 600;
 }
 
 
 .login-footer {
+
+    margin-top: 32px;
 
     text-align: center;
 
@@ -263,15 +298,12 @@ button {
 
     font-size: 9px;
 
-    margin-top: 32px;
-
     line-height: 1.5;
 }
 
 
-
 /* =========================================================
-   APPLICATION
+   APP
 ========================================================= */
 
 .app {
@@ -281,8 +313,6 @@ button {
     display: flex;
 
     background: #f5f5f5;
-
-    color: white;
 }
 
 
@@ -296,12 +326,14 @@ button {
 
     min-height: 100vh;
 
-    padding: 14px;
-
     position: fixed;
 
-    left: 0;
     top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    padding: 14px;
 
     background:
         linear-gradient(
@@ -324,26 +356,30 @@ button {
 
     gap: 8px;
 
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.15);
+
     font-size: 11px;
 
     font-weight: 600;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-.home-icon {
+
+.sidebar-header .home-icon {
+
     margin-left: auto;
 }
 
 
 .sidebar-brand {
 
-    text-align: center;
-
     padding: 22px 0;
+
+    text-align: center;
 }
+
 
 .sidebar-brand h2 {
 
@@ -352,13 +388,14 @@ button {
     font-size: 17px;
 }
 
-.sidebar-brand p {
 
-    font-size: 8px;
+.sidebar-brand p {
 
     margin-top: 5px;
 
-    opacity: .7;
+    font-size: 8px;
+
+    opacity: 0.7;
 }
 
 
@@ -374,23 +411,23 @@ button {
 
 .navigation a {
 
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 11px;
-
-    padding: 9px;
-
-    border-radius: 5px;
-
     display: flex;
 
     align-items: center;
 
     gap: 10px;
 
-    transition: .2s;
+    padding: 9px;
+
+    border-radius: 5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: 0.2s;
 }
 
 
@@ -416,11 +453,9 @@ button {
 
     position: absolute;
 
-    bottom: 20px;
-
     left: 14px;
-
     right: 14px;
+    bottom: 20px;
 
     display: flex;
 
@@ -432,16 +467,14 @@ button {
 
 .sidebar-bottom a {
 
-    text-decoration: none;
+    padding: 7px;
 
     color: white;
 
+    text-decoration: none;
+
     font-size: 10px;
-
-    padding: 7px;
-
 }
-
 
 
 /* =========================================================
@@ -450,13 +483,11 @@ button {
 
 .main-content {
 
-    margin-left: 230px;
-
     width: calc(100% - 230px);
 
     min-height: 100vh;
 
-    color: white;
+    margin-left: 230px;
 
     background:
         linear-gradient(
@@ -481,9 +512,11 @@ button {
 
     padding: 0 25px;
 
-    background: rgba(5,13,32,0.25);
+    background:
+        rgba(5,13,32,0.25);
 
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom:
+        1px solid rgba(255,255,255,0.1);
 
     font-size: 12px;
 
@@ -491,13 +524,33 @@ button {
 }
 
 
-.mobile-menu {
-    margin-right: 10px;
+.topbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 }
 
+
+.mobile-menu {
+
+    cursor: pointer;
+}
+
+
 .top-icons {
+
     display: flex;
+
     gap: 15px;
+}
+
+
+.top-icons span {
+
+    cursor: pointer;
 }
 
 
@@ -519,35 +572,38 @@ button {
 }
 
 
-.active-page {
+.page.active-page {
+
     display: block;
 }
 
 
 .page-intro {
+
     margin-bottom: 20px;
 }
 
+
 .page-intro h2 {
+
+    margin-bottom: 8px;
 
     font-family: "Space Mono", monospace;
 
     font-size: 17px;
-
-    margin-bottom: 8px;
 }
+
 
 .page-intro p {
 
-    font-size: 9px;
-
     color: #c8d8f6;
+
+    font-size: 9px;
 }
 
 
-
 /* =========================================================
-   SCAN CARD
+   DASHBOARD
 ========================================================= */
 
 .scan-card {
@@ -558,37 +614,37 @@ button {
 
     padding: 17px;
 
+    border-radius: 12px;
+
     text-align: center;
 
     background: #f5f5f5;
 
     color: #111;
-
-    border-radius: 12px;
 }
 
 
 .scan-icon {
 
-    font-size: 16px;
-
     margin-bottom: 5px;
+
+    font-size: 16px;
 }
 
 
 .scan-card h3 {
 
-    font-size: 13px;
-
     margin-bottom: 5px;
+
+    font-size: 13px;
 }
 
 
 .scan-card p {
 
-    font-size: 8px;
-
     color: #8a8a8a;
+
+    font-size: 8px;
 
     line-height: 1.5;
 }
@@ -596,26 +652,21 @@ button {
 
 .scan-card button {
 
+    margin-top: 10px;
+
+    padding: 8px 25px;
+
     border: none;
+
+    border-radius: 15px;
 
     background: #286be5;
 
     color: white;
 
-    border-radius: 15px;
-
-    padding: 8px 25px;
-
-    margin-top: 10px;
-
     font-size: 9px;
 }
 
-
-
-/* =========================================================
-   STATS
-========================================================= */
 
 .stats-grid {
 
@@ -627,13 +678,13 @@ button {
 
     grid-template-columns: 1fr 1fr;
 
-    background: rgba(255,255,255,0.95);
+    overflow: hidden;
 
     border-radius: 10px;
 
-    color: #111;
+    background: rgba(255,255,255,0.95);
 
-    overflow: hidden;
+    color: #111;
 }
 
 
@@ -641,9 +692,9 @@ button {
 
     padding: 10px;
 
-    text-align: center;
-
     border: 1px solid #ddd;
+
+    text-align: center;
 }
 
 
@@ -657,16 +708,11 @@ button {
 
 .stat-card span {
 
-    font-size: 8px;
-
     color: #555;
+
+    font-size: 8px;
 }
 
-
-
-/* =========================================================
-   IMPORTANT DASHBOARD
-========================================================= */
 
 .dashboard-important {
 
@@ -682,9 +728,9 @@ button {
 
 .dashboard-important h3 {
 
-    font-size: 10px;
-
     margin-bottom: 8px;
+
+    font-size: 10px;
 }
 
 
@@ -696,9 +742,9 @@ button {
 
 .dashboard-important a {
 
-    color: white;
-
     display: block;
+
+    color: white;
 
     text-align: right;
 
@@ -706,9 +752,8 @@ button {
 }
 
 
-
 /* =========================================================
-   UPLOAD / ANALYSIS
+   ANALYSIS
 ========================================================= */
 
 .upload-card {
@@ -719,21 +764,21 @@ button {
 
     padding: 25px 20px;
 
-    background: #f4f4f4;
-
     border-radius: 11px;
 
-    text-align: center;
+    background: #f4f4f4;
 
     color: #111;
+
+    text-align: center;
 }
 
 
 .upload-icon {
 
-    font-size: 22px;
-
     margin-bottom: 10px;
+
+    font-size: 22px;
 }
 
 
@@ -745,11 +790,11 @@ button {
 
 .upload-card p {
 
-    font-size: 8px;
+    margin: 5px 0 15px;
 
     color: #999;
 
-    margin: 5px 0 15px;
+    font-size: 8px;
 }
 
 
@@ -757,17 +802,17 @@ button {
 
     display: inline-block;
 
+    padding: 7px 22px;
+
+    border-radius: 15px;
+
     background: #286be5;
 
     color: white;
 
-    border-radius: 15px;
-
-    padding: 7px 22px;
+    cursor: pointer;
 
     font-size: 9px;
-
-    cursor: pointer;
 }
 
 
@@ -775,9 +820,9 @@ button {
 
     display: block;
 
-    font-size: 9px;
-
     margin: 14px;
+
+    font-size: 9px;
 }
 
 
@@ -785,7 +830,9 @@ button {
 
     width: 100%;
 
-    height: 55px;
+    height: 65px;
+
+    padding: 10px;
 
     resize: none;
 
@@ -795,8 +842,6 @@ button {
 
     border-radius: 7px;
 
-    padding: 10px;
-
     font-size: 8px;
 }
 
@@ -805,21 +850,20 @@ button {
 
     width: 130px;
 
+    margin-top: 12px;
+
+    padding: 8px;
+
     border: none;
 
     border-radius: 15px;
-
-    padding: 8px;
 
     background: #286be5;
 
     color: white;
 
     font-size: 9px;
-
-    margin-top: 12px;
 }
-
 
 
 /* =========================================================
@@ -834,50 +878,50 @@ button {
 
     padding: 20px;
 
+    border-radius: 10px;
+
     background:
         linear-gradient(
             180deg,
             #182b61,
             #286ee4
         );
-
-    border-radius: 10px;
 }
 
 
 .result-heading {
+
+    margin-bottom: 8px;
 
     color: #fff45b;
 
     font-size: 15px;
 
     font-weight: 700;
-
-    margin-bottom: 8px;
 }
 
 
 .result-description {
 
-    font-size: 9px;
-
     margin-bottom: 15px;
+
+    font-size: 9px;
 }
 
 
 .risk-box {
 
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
     background: #f4f4f4;
 
     color: #111;
 
-    border-radius: 9px;
-
-    padding: 15px;
-
     text-align: center;
-
-    margin-bottom: 20px;
 }
 
 
@@ -912,17 +956,17 @@ button {
 .email-details h3,
 .flag-reasons h3 {
 
-    font-size: 10px;
-
     margin-bottom: 8px;
+
+    font-size: 10px;
 }
 
 
 .email-details p {
 
-    font-size: 9px;
-
     margin-bottom: 10px;
+
+    font-size: 9px;
 
     line-height: 1.5;
 }
@@ -936,9 +980,9 @@ button {
 
 .flag-reasons p {
 
-    font-size: 9px;
-
     margin-bottom: 5px;
+
+    font-size: 9px;
 }
 
 
@@ -958,17 +1002,17 @@ button {
 
 .threat-actions button {
 
-    background: transparent;
+    min-width: 110px;
 
-    color: white;
+    padding: 5px 20px;
 
     border: 1px solid white;
 
     border-radius: 15px;
 
-    padding: 5px 20px;
+    background: transparent;
 
-    min-width: 110px;
+    color: white;
 
     font-size: 8px;
 }
@@ -980,7 +1024,6 @@ button {
 
     color: #2469df;
 }
-
 
 
 /* =========================================================
@@ -1001,9 +1044,10 @@ button {
 
     margin: 20px auto;
 
-    border-bottom: 1px solid rgba(255,255,255,.4);
-
     padding: 8px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.4);
 }
 
 
@@ -1029,9 +1073,8 @@ button {
 }
 
 
-
 /* =========================================================
-   EMAIL LIST
+   EMAILS
 ========================================================= */
 
 .email-list {
@@ -1048,39 +1091,49 @@ button {
 
     padding: 13px 12px;
 
-    border-bottom: 2px solid rgba(255,255,255,.7);
+    border-bottom:
+        2px solid rgba(255,255,255,.7);
 
     font-size: 9px;
+
+    transition: background .2s;
+}
+
+
+.email-item:hover {
+
+    background:
+        rgba(255,255,255,0.06);
 }
 
 
 .email-title {
 
+    margin-bottom: 4px;
+
     font-size: 10px;
 
     font-weight: 600;
-
-    margin-bottom: 4px;
 }
 
 
 .email-item small {
 
-    font-size: 8px;
-
     color: #d8e4fb;
+
+    font-size: 8px;
 }
 
 
 .email-item p {
+
+    max-width: 85%;
 
     margin-top: 5px;
 
     color: #dbe5f7;
 
     line-height: 1.4;
-
-    max-width: 85%;
 }
 
 
@@ -1088,23 +1141,21 @@ button {
 
     display: block;
 
-    text-align: right;
+    margin-top: 3px;
 
     color: #e0e9fa;
 
+    text-align: right;
+
     font-size: 8px;
-
-    margin-top: 3px;
 }
 
 
-.important-email {
+.email-item strong {
 
-    background: rgba(255,255,255,0.04);
-}
+    display: block;
 
-
-.important-email strong {
+    margin-top: 5px;
 
     color: #fff35c;
 
@@ -1112,9 +1163,15 @@ button {
 }
 
 
+.important-email {
+
+    background:
+        rgba(255,255,255,0.04);
+}
+
 
 /* =========================================================
-   THREAT SUMMARY
+   THREATS
 ========================================================= */
 
 .threat-summary {
@@ -1139,9 +1196,9 @@ button {
 
     display: block;
 
-    font-size: 12px;
-
     margin-bottom: 12px;
+
+    font-size: 12px;
 }
 
 
@@ -1150,11 +1207,6 @@ button {
     font-size: 8px;
 }
 
-
-
-/* =========================================================
-   THREAT ITEMS
-========================================================= */
 
 .threat-list {
 
@@ -1170,15 +1222,16 @@ button {
 
     padding: 12px;
 
-    border-bottom: 2px solid rgba(255,255,255,.8);
+    border-bottom:
+        2px solid rgba(255,255,255,.8);
 }
 
 
 .threat-item h3 {
 
-    font-size: 10px;
-
     margin-bottom: 4px;
+
+    font-size: 10px;
 }
 
 
@@ -1190,9 +1243,9 @@ button {
 
 .threat-item p {
 
-    font-size: 8px;
-
     margin-top: 5px;
+
+    font-size: 8px;
 }
 
 
@@ -1200,11 +1253,11 @@ button {
 
     display: block;
 
-    font-size: 8px;
-
     margin-top: 5px;
 
     color: #e4edff;
+
+    font-size: 8px;
 }
 
 
@@ -1216,9 +1269,9 @@ button {
 
     bottom: 14px;
 
-    background: transparent;
-
     border: none;
+
+    background: transparent;
 
     color: white;
 
@@ -1230,18 +1283,19 @@ button {
     color: #ff4b4b;
 }
 
+
 .medium h3 {
     color: #ffc22e;
 }
+
 
 .low h3 {
     color: #62ef73;
 }
 
 
-
 /* =========================================================
-   IMPORTANT COUNT
+   IMPORTANT
 ========================================================= */
 
 .important-count {
@@ -1258,6 +1312,69 @@ button {
 }
 
 
+/* =========================================================
+   REPORT
+========================================================= */
+
+.report-card {
+
+    width: 320px;
+
+    margin: 30px auto;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #111;
+}
+
+
+.report-card h3 {
+
+    margin-bottom: 15px;
+
+    font-size: 13px;
+}
+
+
+.report-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 9px;
+}
+
+
+.report-row strong {
+
+    color: #2469df;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #d8e4fb;
+
+    font-size: 10px;
+}
+
 
 /* =========================================================
    RESPONSIVE
@@ -1271,9 +1388,7 @@ button {
 
         transform: translateX(-100%);
 
-        transition: .3s;
-
-        z-index: 100;
+        transition: transform .3s ease;
     }
 
 
@@ -1285,9 +1400,9 @@ button {
 
     .main-content {
 
-        margin-left: 0;
-
         width: 100%;
+
+        margin-left: 0;
     }
 
 
@@ -1336,6 +1451,12 @@ button {
 
 
     .threat-result-card {
+
+        width: 95%;
+    }
+
+
+    .report-card {
 
         width: 95%;
     }
