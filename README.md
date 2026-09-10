@@ -25,3 +25,6 @@ An AI-powered email threat detection platform that analyses emails, highlights p
 
 #### An AI-generated UI concept for the Thandam Labs AI-Powered Email Threat Detection Platform, created using Google Stitch to explore an alternative design approach for the same problem statement.
 <img width="953" height="507" alt="image" src="https://github.com/user-attachments/assets/8cabf154-1e66-499d-b2b6-8616171744fe" />
+
+#### This is the live working website.
+https://mridula-lab.github.io/SkillLab-Project/
