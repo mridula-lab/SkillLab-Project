@@ -14,6 +14,39 @@ Users often struggle to identify phishing, scam, and fake emails. Suspicious lin
 ### Possible Solutions:
 An AI-powered email threat detection platform that analyses emails, highlights potential risks, and presents the results through a simple and easy-to-understand interface. It will help users identify threats, recover important emails from spam, and manage unwanted emails more effectively.
 
+### Pipeline:
+                         LOGIN
+                           ↓
+                      DASHBOARD
+                           ↓
+                  ┌────────┴────────┐
+                  ↓                 ↓
+                INBOX              SPAM
+                  ↓                 ↓
+             SELECT EMAIL      SELECT/REVIEW
+                  └────────┬────────┘
+                           ↓
+                    EMAIL ANALYSIS
+                           ↓
+                     THREAT RESULT
+                           ↓
+                      TAKE ACTION
+                           ↓
+             ┌─────────────┼─────────────┐
+             ↓             ↓             ↓
+        REPORT SPAM   BLOCK SENDER    DELETE /
+             ↓                         MOVE TO INBOX
+             └─────────────┬─────────────┘
+                           ↓
+                      DASHBOARD
+                      
+        ┌─────────────────────────────────┐
+        │        ADDITIONAL VIEWS         │
+        ├─────────────────────────────────┤
+        │ THREATS → View detected threats │
+        │ IMPORTANT → View important      │
+        │             emails in Spam      │
+        └─────────────────────────────────┘
 
 #### The UI/UX design for the Thandam Labs AI-Powered Email Threat Detection Platform was developed in Figma on 08/09/2026, covering the key screens and user interface layouts.
 <img width="1918" height="1009" alt="image" src="https://github.com/user-attachments/assets/ee47b93b-33f2-4a9c-bbfc-b18bcffad701" />
